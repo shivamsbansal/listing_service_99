@@ -8,7 +8,10 @@ class Listing < ActiveRecord::Base
 	validate :user_exists
 
 	def user_exists
-		url = "http://thawing-mountain-3111.herokuapp.com/api/v1/users/" + "#{self.user}"
+		response = Net::HTTP.get_response(URI.parse(URI.encode("http://thawing-mountain-3111.herokuapp.com/api/v1/users/" + "#{self.user}")))
+		unless response.code == "200"
+			errors.add(:user, "should exist")
+		end	
 	end
 
 	def type_of_listing

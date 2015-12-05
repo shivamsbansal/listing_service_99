@@ -43,7 +43,7 @@ class Api::V1::ApiListingsController < Api::BaseApiController
     end
 
     def listing_params
-      params.permit(:user, :price, :listing_type,
+      params.permit(:id, :user, :price, :listing_type,
                                    :postal_code, :status)
     end
 end
