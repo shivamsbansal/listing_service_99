@@ -5,6 +5,11 @@ class Listing < ActiveRecord::Base
 	validates :status, presence: true
 	validate :type_of_listing
 	validate :status_of_listing
+	validate :user_exists
+
+	def user_exists
+		url = "http://thawing-mountain-3111.herokuapp.com/api/v1/users/" + "#{self.user}"
+	end
 
 	def type_of_listing
 		if self.listing_type == "rent" || self.listing_type == "sale"
