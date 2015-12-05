@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  price: 1
+  listing_type: MyString
+  postal_code: 1
+  status: MyString
+
+two:
+  user: MyString
+  price: 1
+  listing_type: MyString
+  postal_code: 1
+  status: MyString
